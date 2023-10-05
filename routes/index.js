@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const passport = require('passport');
 router.use('/', require('./swagger'));
 
 //console.log('test');
@@ -14,5 +14,14 @@ router.use('/orders',require('./orders'));
 router.use('/products',require('./products'));
 
 router.use('/vendors',require('./vendors'));
+
+router.get('/login', passport.authenticate('google'), (req, res) => {});
+
+router.get('/logout', function(req, res, next) {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+});
 
 module.exports = router;

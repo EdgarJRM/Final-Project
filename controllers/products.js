@@ -48,9 +48,13 @@ const createProduct = async (req, res) => {
     //#swagger.tags=['products]
   try {
     const product = {
-
-      //AddMappingHere
-
+      name: req.body.name,
+      department: req.body.department,
+      retailPrice: req.body.retailPrice,
+      cost: req.body.cost,
+      vendorName: req.body.vendorName,
+      color: req.body.color,
+      qtyInStock: req.body.qtyInStock,  
     };
     const result = await mongodb
       .getDb()

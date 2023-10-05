@@ -48,9 +48,9 @@ const createOrder = async (req, res) => {
     //#swagger.tags=['orders]
   try {
     const order = {
-
-      //AddMappingHere
-      
+      number: req.body.number,
+      date: req.body.date,
+      total: req.body.total      
     };
     const result = await mongodb
       .getDb()
