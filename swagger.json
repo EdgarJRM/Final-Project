@@ -1,20 +1,20 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "CIT341 Project 2 API",
+    "title": "CIT341 Team 4 Final Project API",
     "description": "This is the API for Awesome Mart API.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-team-4-final-project.onrender.com/api-docs/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
       "get": {
         "tags": [
-          "Awesome Mart"
+          "Awesome Mart API"
         ],
         "description": "",
         "responses": {

@@ -48,13 +48,9 @@ const createProduct = async (req, res) => {
     //#swagger.tags=['products]
   try {
     const product = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      favoriteClass: req.body.favoriteClass,
-      wandCore: req.body.wandCore,
-      wandMaterial: req.body.wandMaterial,
-      birthday: req.body.birthday,
-      hogwartsHouse: req.body.hogwartsHouse,
+
+      //AddMappingHere
+
     };
     const result = await mongodb
       .getDb()
@@ -78,13 +74,8 @@ const updateProduct = async (req, res) => {
       //console.log("test")
     const productId = new ObjectId(req.params.id);
     const updatedproduct = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      favoriteClass: req.body.favoriteClass,
-      wandCore: req.body.wandCore,
-      wandMaterial: req.body.wandMaterial,
-      birthday: req.body.birthday,
-      hogwartsHouse: req.body.hogwartsHouse,
+  
+        //AddMappingHere
     };
     const result = await mongodb
       .getDb()
