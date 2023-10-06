@@ -48,9 +48,10 @@ const createCustomer = async (req, res) => {
     //#swagger.tags=['customers]
   try {
     const customer = {
-
-      //AddMappingHere
-      
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber      
     };
     const result = await mongodb
       .getDb()

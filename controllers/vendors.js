@@ -48,9 +48,9 @@ const createVendor = async (req, res) => {
     //#swagger.tags=['vendors]
   try {
     const vendor = {
-
-      //AddMappingHere  
-
+      name: req.body.name,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber 
     };
     const result = await mongodb
       .getDb()
