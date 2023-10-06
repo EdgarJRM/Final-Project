@@ -7,8 +7,8 @@ const doc = {
         title: "CIT341 Project 2 API",
         description: "This is the API for Awesome Mart API.",
     },
-    host: "localhost:3000",
-    schemes: ['http']
+    host: "cse341-team-4-final-project.onrender.com",
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';
