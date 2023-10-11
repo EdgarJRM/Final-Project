@@ -2,8 +2,10 @@ const validator = require('../helpers/validate');
 
 const saveCustomer = (req, res, next) => {
     const validationRule = {
-
-        //ADD MAPPING HERE
+        firstName: 'required|string',
+        lastName: 'required|string',
+        email: 'required|email',
+        phoneNumber: 'required|numeric' 
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -20,8 +22,9 @@ const saveCustomer = (req, res, next) => {
 
 const saveOrder = (req, res, next) => {
     const validationRule = {
-       
-        //ADD MAPPING HERE
+        number: 'required|numeric',
+        date: 'required|date',
+        total: 'required|numeric'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -38,8 +41,13 @@ const saveOrder = (req, res, next) => {
 
 const saveProduct = (req, res, next) => {
     const validationRule = {
-       
-        //ADD MAPPING HERE
+        name: 'required|string',
+        department: 'required|string',
+        retailPrice: 'required|numeric',
+        cost: 'required|numeric',
+        vendorName: 'required|string',
+        color: 'required|string',
+        qtyInStock: 'required|integer'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -56,8 +64,9 @@ const saveProduct = (req, res, next) => {
 
 const saveVendor = (req, res, next) => {    
     const validationRule = {
-       
-        //ADD MAPPING HERE
+        name: 'required|string',
+        email: 'required|email',
+        phoneNumber: 'required|numeric'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {

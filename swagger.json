@@ -41,6 +41,29 @@
         "tags": [
           "Customers"
         ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "Carla"
+                },
+                "lastName": {
+                  "example": "Matos"
+                },
+                "email": {
+                  "example": "carlamatos@exemple.com"
+                },
+                "phoneNumber": {
+                  "example": "+51968185250"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -79,6 +102,27 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "Carla"
+                },
+                "lastName": {
+                  "example": "Matos"
+                },
+                "email": {
+                  "example": "carlamatos@exemple.com"
+                },
+                "phoneNumber": {
+                  "example": "+51968185250"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -124,6 +168,26 @@
           "Orders"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "number": {
+                  "example": "12704"
+                },
+                "date": {
+                  "example": "May 27, 2024"
+                },
+                "total": {
+                  "example": "1000"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -162,6 +226,24 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "number": {
+                  "example": "12704"
+                },
+                "date": {
+                  "example": "May 27, 2024"
+                },
+                "total": {
+                  "example": "1000"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -207,6 +289,38 @@
           "Products"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Shirt"
+                },
+                "department": {
+                  "example": "Men"
+                },
+                "retailPrice": {
+                  "example": "15"
+                },
+                "cost": {
+                  "example": "6"
+                },
+                "vendorName": {
+                  "example": "Carlos Magno"
+                },
+                "color": {
+                  "example": "Blue"
+                },
+                "qtyInStock": {
+                  "example": "555"
+                }            
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -245,6 +359,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Shirt"
+                },
+                "department": {
+                  "example": "Men"
+                },
+                "retailPrice": {
+                  "example": "15"
+                },
+                "cost": {
+                  "example": "6"
+                },
+                "vendorName": {
+                  "example": "Carlos Magno"
+                },
+                "color": {
+                  "example": "Blue"
+                },
+                "qtyInStock": {
+                  "example": "555"
+                }            
+              }
+            }
           }
         ],
         "responses": {
@@ -290,6 +434,26 @@
           "Vendors"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Ricardo Quiroz"
+                },
+                "email": {
+                  "example": "martinquirozb@exemple.com"
+                },
+                "phoneNumber": {
+                  "example": "+51968185250"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -328,6 +492,24 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Ricardo Quiroz"
+                },
+                "email": {
+                  "example": "martinquirozb@exemple.com"
+                },
+                "phoneNumber": {
+                  "example": "+51968185250"
+                }
+              }
+            }
           }
         ],
         "responses": {
