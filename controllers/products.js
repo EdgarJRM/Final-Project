@@ -78,8 +78,13 @@ const updateProduct = async (req, res) => {
       //console.log("test")
     const productId = new ObjectId(req.params.id);
     const updatedproduct = {
-  
-        //AddMappingHere
+      name: req.body.name,
+      department: req.body.department,
+      retailPrice: req.body.retailPrice,
+      cost: req.body.cost,
+      vendorName: req.body.vendorName,
+      color: req.body.color,
+      qtyInStock: req.body.qtyInStock,
     };
     const result = await mongodb
       .getDb()

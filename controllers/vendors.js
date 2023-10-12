@@ -74,9 +74,9 @@ const updateVendor = async (req, res) => {
       //console.log("test")
     const vendorId = new ObjectId(req.params.id);
     const updatedvendor = {
-
-      //AddMappingHere
-
+      name: req.body.name,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber 
     };
     const result = await mongodb
       .getDb()

@@ -1,0 +1,135 @@
+// LOCALHOST 
+### Get all customers
+GET http://localhost:3000/customers
+
+### Get customers by id
+GET http://localhost:3000/customers/65261d57fbd5eae9b75fa253
+
+### Create customers
+POST http://localhost:3000/customers HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Lidas",
+    "lastName": "Huaman",
+    "email": "ppdsadfrz@gmail.com",
+    "phoneNumber": "+999888777"
+}
+
+### PUT customers
+PUT http://localhost:3000/customers/65261d57fbd5eae9b75fa253 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Maria",
+    "lastName": "Smith",
+    "email": "ppdsadfrz@gmail.com",
+    "phoneNumber": "+999888777"
+}
+
+### DELETE customers
+DELETE  http://localhost:3000/customers/65261d20597cdc01209e1df6 HTTP/1.1
+
+
+
+//......... Orders .........//
+### Get all Orders
+GET http://localhost:3000/orders
+
+### Get Orders by id
+GET http://localhost:3000/orders/65261ebbfbd5eae9b75fa255
+
+### Create Orders
+POST http://localhost:3000/orders HTTP/1.1
+content-type: application/json
+
+{
+    "number": "27041",
+    "date": "April 30, 1999",
+    "total": "330"
+}
+
+### PUT Orders
+PUT http://localhost:3000/orders/65261ebbfbd5eae9b75fa255 HTTP/1.1
+content-type: application/json
+
+{
+    "number": "27040",
+    "date": "April 20, 2024",
+    "total": "552"
+}
+
+### DELETE Orders
+DELETE  http://localhost:3000/orders/65261ebbfbd5eae9b75fa256 HTTP/1.1
+
+
+
+//......... Products .........//
+### Get all products
+GET http://localhost:3000/products
+
+### Get products by id
+GET http://localhost:3000/products/65262137fbd5eae9b75fa258
+
+### Create products
+POST http://localhost:3000/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Top",
+    "department": "Women",
+    "retailPrice": "12.50",
+    "cost": "5",
+    "vendorName": "Carlos Magno",
+    "color": "Red",
+    "qtyInStock": 250
+}
+
+### PUT products
+PUT http://localhost:3000/products/65262137fbd5eae9b75fa258 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Top",
+    "department": "Women",
+    "retailPrice": "12.50",
+    "cost": "5",
+    "vendorName": "Carlos Magno",
+    "color": "Green",
+    "qtyInStock": 300
+}
+
+### DELETE products
+DELETE  http://localhost:3000/products/65262137fbd5eae9b75fa258 HTTP/1.1
+
+
+
+//......... Vendors .........//
+### Get all vendors
+GET http://localhost:3000/vendors
+
+### Get vendors by id
+GET http://localhost:3000/vendors/6526236dfbd5eae9b75fa25a
+
+### Create vendors
+POST http://localhost:3000/vendors HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Juan Carlos Gutierrez",
+    "email": "juan@gmail.com",
+    "phoneNumber": "+333222111"
+}
+
+### PUT vendors
+PUT http://localhost:3000/vendors/6526236dfbd5eae9b75fa25a HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Maria Smith",
+    "email": "mariasmith1234@gmail.com",
+    "phoneNumber": 999888777
+}
+
+### DELETE vendors
+DELETE  http://localhost:3000/vendors/6526236dfbd5eae9b75fa25a HTTP/1.1

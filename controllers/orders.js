@@ -74,9 +74,9 @@ const updateOrder = async (req, res) => {
       //console.log("test")
     const orderId = new ObjectId(req.params.id);
     const updatedorder = {
-
-      //AddMappingHere
-
+      number: req.body.number,
+      date: req.body.date,
+      total: req.body.total 
     };
     const result = await mongodb
       .getDb()

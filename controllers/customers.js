@@ -75,9 +75,10 @@ const updateCustomer = async (req, res) => {
       //console.log("test")
     const customerId = new ObjectId(req.params.id);
     const updatedcustomer = {
-
-      //AddMappingHere
-
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber
     };
     const result = await mongodb
       .getDb()
