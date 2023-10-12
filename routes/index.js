@@ -5,7 +5,7 @@ router.use('/', require('./swagger'));
 //console.log('test');
 router.get('/', (req, res) => {
     //#swagger.tags = ['Hello World']
-    res.send('Welcome to the Awesom Mart API.');});
+    res.send('Welcome to the Awesome Mart API.');});
 
 router.use('/customers',require('./customers'));
 
