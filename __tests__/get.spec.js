@@ -5,6 +5,7 @@ const request = supertest(server)
 const { MongoClient } = require("mongodb")
 const dotenv = require("dotenv")
 dotenv.config()
+process.env.NODE_ENV = "test"
 
 describe("Test Handlers", () => {
     beforeAll(async () => {
