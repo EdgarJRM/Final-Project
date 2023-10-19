@@ -6,11 +6,9 @@ const getAllProducts = async (req, res) => {
   try {
     console.log("get all test")
     const result = await mongodb.getDb().db().collection("products").find();
-    console.log(result)
     result.toArray().then((products) => {
       res.setHeader("Content-Type", "application/json");
       res.status(200).json(products);
-      console.log(products)
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
