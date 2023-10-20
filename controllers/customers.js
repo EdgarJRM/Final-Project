@@ -50,7 +50,11 @@ const createCustomer = async (req, res) => {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      phoneNumber: req.body.phoneNumber      
+      shippingStreet: req.body.shippingStreet,
+      shippingCity: req.body.shippingCity,
+      shippingState: req.body.shippingState,
+      shippingPostalCode: req.body.shippingPostalCode,
+      birthday: req.body.birthday     
     };
     const result = await mongodb
       .getDb()
@@ -74,10 +78,14 @@ const updateCustomer = async (req, res) => {
       //console.log("test")
     const customerId = new ObjectId(req.params.id);
     const updatedcustomer = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      phoneNumber: req.body.phoneNumber
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    shippingStreet: req.body.shippingStreet,
+    shippingCity: req.body.shippingCity,
+    shippingState: req.body.shippingState,
+    shippingPostalCode: req.body.shippingPostalCode,
+    birthday: req.body.birthday
     };
     const result = await mongodb
       .getDb()

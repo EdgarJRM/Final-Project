@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "CIT341 Team 4 Final Project API",
+    "title": "CIT341 Project 2 API",
     "description": "This is the API for Awesome Mart API.",
     "version": "1.0.0"
   },
@@ -14,7 +14,7 @@
     "/": {
       "get": {
         "tags": [
-          "Awesome Mart API"
+          "Hello World"
         ],
         "description": "",
         "responses": {
@@ -23,24 +23,32 @@
           }
         }
       }
-    },
+    },   
     "/customers/": {
       "get": {
-        "tags": [
-          "Customers"
-        ],
+        "tags": ["customers"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
+        "tags": ["customers"],
         "description": "",
-        "tags": [
-          "Customers"
-        ],
         "parameters": [
           {
             "name": "body",
@@ -49,33 +57,58 @@
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "Carla"
+                  "example": "any"
                 },
                 "lastName": {
-                  "example": "Matos"
+                  "example": "any"
                 },
                 "email": {
-                  "example": "carlamatos@exemple.com"
+                  "example": "any"
                 },
-                "phoneNumber": {
-                  "example": "+51968185250"
+                "shippingStreet": {
+                  "example": "any"
+                },
+                "shippingCity": {
+                  "example": "any"
+                },
+                "shippingState": {
+                  "example": "any"
+                },
+                "shippingPostalCode": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
                 }
               }
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/customers/{id}": {
       "get": {
+        "tags": ["customers"],
         "description": "",
-        "tags": [
-          "Customers"
+        "produces": [
+          "application/json"
         ],
         "parameters": [
           {
@@ -86,56 +119,71 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
+        "tags": ["customers"],
         "description": "",
-        "tags": [
-          "Customers"
-        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "Carla"
-                },
-                "lastName": {
-                  "example": "Matos"
-                },
-                "email": {
-                  "example": "carlamatos@exemple.com"
-                },
-                "phoneNumber": {
-                  "example": "+51968185250"
-                }
-              }
+          },{
+            "firstName": {
+              "example": "any"
+            },
+            "lastName": {
+              "example": "any"
+            },
+            "email": {
+              "example": "any"
+            },
+            "shippingStreet": {
+              "example": "any"
+            },
+            "shippingCity": {
+              "example": "any"
+            },
+            "shippingState": {
+              "example": "any"
+            },
+            "shippingPostalCode": {
+              "example": "any"
+            },
+            "birthday": {
+              "example": "any"
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": ["customers"],
         "description": "",
-        "tags": [
-          "Customers"
-        ],
         "parameters": [
           {
             "name": "id",
@@ -145,28 +193,36 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
     },
     "/orders/": {
       "get": {
-        "tags": [
-          "Orders"
-        ],
+        "tags": ["orders"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
-        "tags": [
-          "Orders"
-        ],
+        "tags": ["orders"],
         "description": "",
         "parameters": [
           {
@@ -175,32 +231,57 @@
             "schema": {
               "type": "object",
               "properties": {
-                "number": {
-                  "example": "12704"
+                "productCode": {
+                  "example": "any"
                 },
-                "date": {
-                  "example": "May 27, 2024"
+                "listUnitPrice": {
+                  "example": "any"
                 },
-                "total": {
-                  "example": "1000"
+                "unitDiscountAmount": {
+                  "example": "any"
+                },
+                "netUnitPrice": {
+                  "example": "any"
+                },
+                "customerId": {
+                  "example": "any"
+                },
+                "qty": {
+                  "example": "any"
+                },
+                "orderTotal": {
+                  "example": "any"
                 }
               }
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/orders/{id}": {
       "get": {
-        "tags": [
-          "Orders"
-        ],
+        "tags": ["orders"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -210,15 +291,16 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "tags": [
-          "Orders"
-        ],
+        "tags": ["orders"],
         "description": "",
         "parameters": [
           {
@@ -226,36 +308,50 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "number": {
-                  "example": "12704"
-                },
-                "date": {
-                  "example": "May 27, 2024"
-                },
-                "total": {
-                  "example": "1000"
-                }
-              }
+          },{
+            "productCode": {
+              "example": "any"
+            },
+            "listUnitPrice": {
+              "example": "any"
+            },
+            "unitDiscountAmount": {
+              "example": "any"
+            },
+            "netUnitPrice": {
+              "example": "any"
+            },
+            "customerId": {
+              "example": "any"
+            },
+            "qty": {
+              "example": "any"
+            },
+            "orderTotal": {
+              "example": "any"
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "tags": [
-          "Orders"
-        ],
+        "tags": ["orders"],
         "description": "",
         "parameters": [
           {
@@ -266,28 +362,36 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
     },
     "/products/": {
       "get": {
-        "tags": [
-          "Products"
-        ],
+        "tags": ["products"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
-        "tags": [
-          "Products"
-        ],
+        "tags": ["products"],
         "description": "",
         "parameters": [
           {
@@ -296,44 +400,57 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
-                  "example": "Shirt"
+                "productName": {
+                  "example": "any"
                 },
-                "department": {
-                  "example": "Men"
+                "productCode": {
+                  "example": "any"
                 },
-                "retailPrice": {
-                  "example": "15"
+                "listPrice": {
+                  "example": "any"
                 },
-                "cost": {
-                  "example": "6"
+                "qytOnHand": {
+                  "example": "any"
                 },
-                "vendorName": {
-                  "example": "Carlos Magno"
+                "rating": {
+                  "example": "any"
                 },
-                "color": {
-                  "example": "Blue"
+                "bin": {
+                  "example": "any"
                 },
-                "qtyInStock": {
-                  "example": "555"
-                }            
+                "vendor": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/products/{id}": {
       "get": {
-                "tags": [
-          "Products"
-        ],
+        "tags": ["products"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -343,15 +460,16 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "tags": [
-          "Products"
-        ],
+        "tags": ["products"],
         "description": "",
         "parameters": [
           {
@@ -359,48 +477,50 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "Shirt"
-                },
-                "department": {
-                  "example": "Men"
-                },
-                "retailPrice": {
-                  "example": "15"
-                },
-                "cost": {
-                  "example": "6"
-                },
-                "vendorName": {
-                  "example": "Carlos Magno"
-                },
-                "color": {
-                  "example": "Blue"
-                },
-                "qtyInStock": {
-                  "example": "555"
-                }            
-              }
+          },{
+            "productName": {
+              "example": "any"
+            },
+            "productCode": {
+              "example": "any"
+            },
+            "listPrice": {
+              "example": "any"
+            },
+            "qytOnHand": {
+              "example": "any"
+            },
+            "rating": {
+              "example": "any"
+            },
+            "bin": {
+              "example": "any"
+            },
+            "vendor": {
+              "example": "any"
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "tags": [
-          "Products"
-        ],
+        "tags": ["products"],
         "description": "",
         "parameters": [
           {
@@ -411,28 +531,36 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
     },
     "/vendors/": {
       "get": {
-        "tags": [
-          "Vendors"
-        ],
+        "tags": ["vendors"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
-        "tags": [
-          "Vendors"
-        ],
+        "tags": ["vendors"],
         "description": "",
         "parameters": [
           {
@@ -441,32 +569,57 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
-                  "example": "Ricardo Quiroz"
+                "companyName": {
+                  "example": "any"
+                },
+                "hqState": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
                 },
                 "email": {
-                  "example": "martinquirozb@exemple.com"
+                  "example": "any"
                 },
-                "phoneNumber": {
-                  "example": "+51968185250"
+                "contractStartDate": {
+                  "example": "any"
+                },
+                "contractEndDate": {
+                  "example": "any"
+                },
+                "mainContact": {
+                  "example": "any"
                 }
               }
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/vendors/{id}": {
       "get": {
-        "tags": [
-          "Vendors"
-        ],
+        "tags": ["vendors"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -476,15 +629,16 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "tags": [
-          "Vendors"
-        ],
+        "tags": ["vendors"],
         "description": "",
         "parameters": [
           {
@@ -492,36 +646,50 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "Ricardo Quiroz"
-                },
-                "email": {
-                  "example": "martinquirozb@exemple.com"
-                },
-                "phoneNumber": {
-                  "example": "+51968185250"
-                }
-              }
+          },{
+            "companyName": {
+              "example": "any"
+            },
+            "hqState": {
+              "example": "any"
+            },
+            "phone": {
+              "example": "any"
+            },
+            "email": {
+              "example": "any"
+            },
+            "contractStartDate": {
+              "example": "any"
+            },
+            "contractEndDate": {
+              "example": "any"
+            },
+            "mainContact": {
+              "example": "any"
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "tags": [
-          "Vendors"
-        ],
+        "tags": ["vendors"],
         "description": "",
         "parameters": [
           {
@@ -532,8 +700,8 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
