@@ -1,11 +1,17 @@
+const { number } = require('yargs');
 const validator = require('../helpers/validate');
+const { Decimal128 } = require('bson');
 
 const saveCustomer = (req, res, next) => {
     const validationRule = {
         firstName: 'required|string',
         lastName: 'required|string',
         email: 'required|email',
-        phoneNumber: 'required|numeric' 
+        shippingStreet: 'required|string',
+        shippingCity: 'required|string',
+        shippingState: 'required|string',
+        shippingPostalCode: 'required|number',
+        birthday: 'required|date' 
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -22,9 +28,13 @@ const saveCustomer = (req, res, next) => {
 
 const saveOrder = (req, res, next) => {
     const validationRule = {
-        number: 'required|numeric',
-        date: 'required|date',
-        total: 'required|numeric'
+        productCode: 'required|string',
+        listUnitPrice: 'required|currency',
+        unitDiscountAmount: 'required|number',
+        netUnitPrice: 'required|currency',  
+        customerId: 'required|string',
+        qty: 'required|number',
+        orderTotal: 'required|currency'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -41,13 +51,13 @@ const saveOrder = (req, res, next) => {
 
 const saveProduct = (req, res, next) => {
     const validationRule = {
-        name: 'required|string',
-        department: 'required|string',
-        retailPrice: 'required|numeric',
-        cost: 'required|numeric',
-        vendorName: 'required|string',
-        color: 'required|string',
-        qtyInStock: 'required|integer'
+        productName: 'required|string',
+        productCode: 'required|string',
+        listPrice: 'required|Decimal128',
+        qytOnHand: 'required|integar',
+        rating: 'required|integar',
+        bin: 'required|string',
+        vendor: 'required|string'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -64,9 +74,13 @@ const saveProduct = (req, res, next) => {
 
 const saveVendor = (req, res, next) => {    
     const validationRule = {
-        name: 'required|string',
-        email: 'required|email',
-        phoneNumber: 'required|numeric'
+        companyName:'require/string',
+        hqState: 'require/string',
+        phone: 'require/string',
+        email: 'require/email',
+        contractStartDate: 'require/date', 
+        contractEndDate: 'require/date',
+        mainContact: 'require/string' 
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {

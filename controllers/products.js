@@ -46,13 +46,13 @@ const createProduct = async (req, res) => {
     //#swagger.tags=['products]
   try {
     const product = {
-      name: req.body.name,
-      department: req.body.department,
-      retailPrice: req.body.retailPrice,
-      cost: req.body.cost,
-      vendorName: req.body.vendorName,
-      color: req.body.color,
-      qtyInStock: req.body.qtyInStock,  
+    productName: req.body.productName,
+    productCode: req.body.productCode,
+    listPrice: req.body.listPrice,
+    qytOnHand: req.body.qytOnHand,
+    rating: req.body.rating,
+    bin: req.body.bin,
+    vendor: req.body.vendor 
     };
     const result = await mongodb
       .getDb()
@@ -76,13 +76,13 @@ const updateProduct = async (req, res) => {
       //console.log("test")
     const productId = new ObjectId(req.params.id);
     const updatedproduct = {
-      name: req.body.name,
-      department: req.body.department,
-      retailPrice: req.body.retailPrice,
-      cost: req.body.cost,
-      vendorName: req.body.vendorName,
-      color: req.body.color,
-      qtyInStock: req.body.qtyInStock,
+      productName: req.body.productName,
+      productCode: req.body.productCode,
+      listPrice: req.body.listPrice,
+      qytOnHand: req.body.qytOnHand,
+      rating: req.body.rating,
+      bin: req.body.bin,
+      vendor: req.body.vendor 
     };
     const result = await mongodb
       .getDb()

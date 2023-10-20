@@ -46,9 +46,13 @@ const createOrder = async (req, res) => {
     //#swagger.tags=['orders]
   try {
     const order = {
-      number: req.body.number,
-      date: req.body.date,
-      total: req.body.total      
+    productCode: req.body.productCode,
+    listUnitPrice: req.body.listUnitPrice,
+    unitDiscountAmount: req.body.unitDiscountAmount,
+    netUnitPrice: req.body.netUnitPrice,  
+    customerId: req.body.customerId,
+    qty: req.body.qty,
+    orderTotal: req.body.orderTotal   
     };
     const result = await mongodb
       .getDb()
@@ -72,9 +76,13 @@ const updateOrder = async (req, res) => {
       //console.log("test")
     const orderId = new ObjectId(req.params.id);
     const updatedorder = {
-      number: req.body.number,
-      date: req.body.date,
-      total: req.body.total 
+      productCode: req.body.productCode,
+      listUnitPrice: req.body.listUnitPrice,
+      unitDiscountAmount: req.body.unitDiscountAmount,
+      netUnitPrice: req.body.netUnitPrice,  
+      customerId: req.body.customerId,
+      qty: req.body.qty,
+      orderTotal: req.body.orderTotal
     };
     const result = await mongodb
       .getDb()

@@ -46,9 +46,13 @@ const createVendor = async (req, res) => {
     //#swagger.tags=['vendors]
   try {
     const vendor = {
-      name: req.body.name,
+      companyName:req.body.companyName,
+      hqState: req.body.hqState,
+      phone: req.body.phone,
       email: req.body.email,
-      phoneNumber: req.body.phoneNumber 
+      contractStartDate: req.body.contractStartDate, 
+      contractEndDate: req.body.contractEndDate,
+      mainContact: req.body.mainContact 
     };
     const result = await mongodb
       .getDb()
@@ -72,9 +76,13 @@ const updateVendor = async (req, res) => {
       //console.log("test")
     const vendorId = new ObjectId(req.params.id);
     const updatedvendor = {
-      name: req.body.name,
+      companyName:req.body.companyName,
+      hqState: req.body.hqState,
+      phone: req.body.phone,
       email: req.body.email,
-      phoneNumber: req.body.phoneNumber 
+      contractStartDate: req.body.contractStartDate, 
+      contractEndDate: req.body.contractEndDate,
+      mainContact: req.body.mainContact 
     };
     const result = await mongodb
       .getDb()
