@@ -138,34 +138,37 @@
             "type": "string"
           },{
             "name": "body",
-          "in": "body",
-          "schema": {
-            "firstName": {
-              "example": "any"
-            },
-            "lastName": {
-              "example": "any"
-            },
-            "email": {
-              "example": "any"
-            },
-            "shippingStreet": {
-              "example": "any"
-            },
-            "shippingCity": {
-              "example": "any"
-            },
-            "shippingState": {
-              "example": "any"
-            },
-            "shippingPostalCode": {
-              "example": "any"
-            },
-            "birthday": {
-              "example": "any"
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "shippingStreet": {
+                  "example": "any"
+                },
+                "shippingCity": {
+                  "example": "any"
+                },
+                "shippingState": {
+                  "example": "any"
+                },
+                "shippingPostalCode": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
             }
           }
-        }
         ],
         "responses": {
           "204": {
