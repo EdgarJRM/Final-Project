@@ -14,7 +14,7 @@
     "/": {
       "get": {
         "tags": [
-          "Hello World"
+          "Awesome Mart"
         ],
         "description": "",
         "responses": {
