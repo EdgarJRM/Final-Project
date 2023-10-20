@@ -137,6 +137,9 @@
             "required": true,
             "type": "string"
           },{
+            "name": "body",
+          "in": "body",
+          "schema": {
             "firstName": {
               "example": "any"
             },
@@ -162,6 +165,7 @@
               "example": "any"
             }
           }
+        }
         ],
         "responses": {
           "204": {
@@ -308,27 +312,34 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },{
-            "productCode": {
-              "example": "any"
-            },
-            "listUnitPrice": {
-              "example": "any"
-            },
-            "unitDiscountAmount": {
-              "example": "any"
-            },
-            "netUnitPrice": {
-              "example": "any"
-            },
-            "customerId": {
-              "example": "any"
-            },
-            "qty": {
-              "example": "any"
-            },
-            "orderTotal": {
-              "example": "any"
+          },          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productCode": {
+                  "example": "any"
+                },
+                "listUnitPrice": {
+                  "example": "any"
+                },
+                "unitDiscountAmount": {
+                  "example": "any"
+                },
+                "netUnitPrice": {
+                  "example": "any"
+                },
+                "customerId": {
+                  "example": "any"
+                },
+                "qty": {
+                  "example": "any"
+                },
+                "orderTotal": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
@@ -478,26 +489,33 @@
             "required": true,
             "type": "string"
           },{
-            "productName": {
-              "example": "any"
-            },
-            "productCode": {
-              "example": "any"
-            },
-            "listPrice": {
-              "example": "any"
-            },
-            "qytOnHand": {
-              "example": "any"
-            },
-            "rating": {
-              "example": "any"
-            },
-            "bin": {
-              "example": "any"
-            },
-            "vendor": {
-              "example": "any"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "productName": {
+                  "example": "any"
+                },
+                "productCode": {
+                  "example": "any"
+                },
+                "listPrice": {
+                  "example": "any"
+                },
+                "qytOnHand": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "bin": {
+                  "example": "any"
+                },
+                "vendor": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
@@ -647,26 +665,33 @@
             "required": true,
             "type": "string"
           },{
-            "companyName": {
-              "example": "any"
-            },
-            "hqState": {
-              "example": "any"
-            },
-            "phone": {
-              "example": "any"
-            },
-            "email": {
-              "example": "any"
-            },
-            "contractStartDate": {
-              "example": "any"
-            },
-            "contractEndDate": {
-              "example": "any"
-            },
-            "mainContact": {
-              "example": "any"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "companyName": {
+                  "example": "any"
+                },
+                "hqState": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "contractStartDate": {
+                  "example": "any"
+                },
+                "contractEndDate": {
+                  "example": "any"
+                },
+                "mainContact": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
