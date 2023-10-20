@@ -1,6 +1,4 @@
-const { number } = require('yargs');
 const validator = require('../helpers/validate');
-const { Decimal128 } = require('bson');
 
 const saveCustomer = (req, res, next) => {
     const validationRule = {
@@ -10,7 +8,7 @@ const saveCustomer = (req, res, next) => {
         shippingStreet: 'required|string',
         shippingCity: 'required|string',
         shippingState: 'required|string',
-        shippingPostalCode: 'required|number',
+        shippingPostalCode: 'required|integer',
         birthday: 'required|date' 
     }
     validator(req.body, validationRule, {}, (err, status) => {
@@ -29,12 +27,12 @@ const saveCustomer = (req, res, next) => {
 const saveOrder = (req, res, next) => {
     const validationRule = {
         productCode: 'required|string',
-        listUnitPrice: 'required|currency',
-        unitDiscountAmount: 'required|number',
-        netUnitPrice: 'required|currency',  
+        listUnitPrice: 'required|numeric',
+        unitDiscountAmount: 'required|integer',
+        netUnitPrice: 'required|numeric',  
         customerId: 'required|string',
-        qty: 'required|number',
-        orderTotal: 'required|currency'
+        qty: 'required|integar',
+        orderTotal: 'required|numeric'
     }
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -53,9 +51,9 @@ const saveProduct = (req, res, next) => {
     const validationRule = {
         productName: 'required|string',
         productCode: 'required|string',
-        listPrice: 'required|Decimal128',
-        qytOnHand: 'required|integar',
-        rating: 'required|integar',
+        listPrice: 'required|integer',
+        qytOnHand: 'required|integer',
+        rating: 'required|integer',
         bin: 'required|string',
         vendor: 'required|string'
     }
