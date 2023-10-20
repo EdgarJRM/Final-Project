@@ -6,11 +6,9 @@ const getAllVendors = async (req, res) => {
   try {
     console.log("get all test")
     const result = await mongodb.getDb().db().collection("vendors").find();
-    console.log(result)
     result.toArray().then((vendors) => {
       res.setHeader("Content-Type", "application/json");
       res.status(200).json(vendors);
-      console.log(vendors)
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
